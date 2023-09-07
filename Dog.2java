@@ -1,0 +1,49 @@
+ /*2. Write a Java program to create a class called "Dog" with a name and breed attribute.
+  Create two instances of the "Dog" class, set their attributes using the constructor and modify 
+  the attributes using the setter methods and print the updated values.
+ */ public class Dog {
+      private String name;
+      private String breed;
+
+   public Dog(String name,String breed){
+      this.name=name;
+      this.breed=breed;
+    }
+   public String getName(){
+      return name;
+   }
+   public void setName(String name){
+      this.name= name;
+   }
+   public String getBreed(){
+      return breed;
+   }
+      public void setBreed(String breed){
+      this.breed= breed;
+   }
+}
+class Main{
+   public static void main(String[] args) {
+      java.util.Scanner sc=new java.util.Scanner (System.in);
+      System.out.println("enter Dog name");
+      String name=sc.next();
+      System.out.println("enter dog breed");
+      String breed=sc.next();
+      Dog obj=new Dog(name,breed);
+      System.out.println("name "+obj.getName() +" breed "+obj.getBreed());
+
+      System.out.println("enter Dog name");
+      String name1=sc.next();
+      System.out.println("enter dog breed");
+      String breed1=sc.next();
+      Dog obj1=new Dog(name1,breed1);
+
+      obj.setBreed(breed1);          // name old ,breed update
+      System.out.println("name "+obj.getName() +" breed "+obj.getBreed());
+
+      obj.setName (name1);            // name update ,breed old
+      System.out.println("name "+obj.getName() +" breed "+obj.getBreed());
+
+
+   }
+}
